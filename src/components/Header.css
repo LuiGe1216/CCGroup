@@ -1,0 +1,168 @@
+.App-header {
+  background-color: #FCFCFC;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.App-logo {
+  height: 50px;
+  width: auto;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.App-logo:hover {
+  transform: scale(1.1);
+}
+
+.toggle-categories {
+  display: block;
+  background-color: #61dafb;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* Estilo para el contenedor del menú desplegable en versión móvil */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2; /* Coloca el menú sobre el resto del contenido */
+}
+
+.mobile-menu .category-list {
+  list-style: none;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  position: fixed;
+  top: 60px; 
+  right: 0;
+  left: 0;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box; 
+  display: flex;
+  flex-direction: column; 
+}
+
+.mobile-menu .category-list li {
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 5px;
+  width: 100%;
+  box-sizing: border-box; 
+}
+
+.mobile-menu .category-list li:hover {
+  background-color: #EEE931;
+}
+
+.category-nav {
+  width: 100%;
+}
+
+.category-list {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  background-color: #2269EC;
+  justify-content: center;
+}
+
+.category-list li {
+  margin: 0 20px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+}
+
+.category-list li:hover {
+  background-color: #EEE931;
+}
+
+.submenu {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  display: none;
+  z-index: 1; /* Ajusta el z-index para que las subcategorías estén encima del banner */
+}
+
+.category-list li:hover .submenu {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .App-header {
+    align-items: flex-start;
+  }
+
+  .toggle-categories {
+    display: block;
+    background-color: #61dafb;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    align-self: flex-end; 
+  }
+
+  .category-nav {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 60px; 
+    right: 0;
+  }
+
+  .toggle-categories:hover + .category-nav {
+    display: block;
+  }
+
+  .category-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .category-nav li {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #61dafb;
+    margin: 5px 0;
+  }
+
+  .category-nav .submenu {
+    display: none;
+    padding-left: 20px;
+  }
+
+  .category-nav li:hover .submenu {
+    display: block;
+  }
+
+}
